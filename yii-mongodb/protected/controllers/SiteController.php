@@ -106,4 +106,9 @@ class SiteController extends Controller
 		Yii::app()->user->logout();
 		$this->redirect(Yii::app()->homeUrl);
 	}
+
+	public function actionListUsers(){
+		$users = User::model()->findAll();
+		$this->render('user-list', array('model'=>$users));
+	}
 }

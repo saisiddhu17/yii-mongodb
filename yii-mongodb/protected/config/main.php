@@ -16,18 +16,22 @@ return array(
 	'import'=>array(
 		'application.models.*',
 		'application.components.*',
+		'ext.YiiMongoDbSuite.*'
 	),
 
 	'modules'=>array(
 		// uncomment the following to enable the Gii tool
-		/*
+		
 		'gii'=>array(
 			'class'=>'system.gii.GiiModule',
-			'password'=>'Enter Your Password Here',
+			'password'=>'admin123',
 			// If removed, Gii defaults to localhost only. Edit carefully to taste.
+			'generatorPaths' => array(
+				'ext.YiiMongoDbSuite.gii'
+			),
 			'ipFilters'=>array('127.0.0.1','::1'),
 		),
-		*/
+		
 	),
 
 	// application components
@@ -39,7 +43,7 @@ return array(
 		),
 
 		// uncomment the following to enable URLs in path-format
-		/*
+		
 		'urlManager'=>array(
 			'urlFormat'=>'path',
 			'rules'=>array(
@@ -48,10 +52,18 @@ return array(
 				'<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
 			),
 		),
-		*/
+		
 
 		// database settings are configured in database.php
-		'db'=>require(dirname(__FILE__).'/database.php'),
+		//'db'=>require(dirname(__FILE__).'/database.php'),
+		'mongodb' => array(
+			'class' => 'EMongoDB',
+			'connectionString' => 'mongodb://admin:admin123@127.0.0.1:27017',
+			'dbName' => 'siddhu',
+			'fsyncFlag' => true,
+			'safeFlag' => true,
+			'useCursor' => false
+		),
 
 		'errorHandler'=>array(
 			// use 'site/error' action to display errors
