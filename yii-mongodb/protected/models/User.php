@@ -2,9 +2,9 @@
 
 class User extends EMongoDocument
     {
-      public $login;
-      public $name;
-      public $pass;
+      public $username;
+      public $email;
+      public $password;
  
       // This has to be defined in every model, this is same as with standard Yii ActiveRecord
       public static function model($className=__CLASS__)
@@ -21,18 +21,18 @@ class User extends EMongoDocument
       public function rules()
       {
         return array(
-          array('login, pass', 'required'),
-          array('login, pass', 'length', 'max' => 20),
-          array('name', 'length', 'max' => 255),
+          array('username, password', 'required'),
+          array('username, password', 'length', 'max' => 20),
+          array('email', 'length', 'max' => 255),
         );
       }
  
       public function attributeLabels()
       {
         return array(
-          'login'  => 'User Login',
-          'name'   => 'Full name',
-          'pass'   => 'Password',
+          'username'  => 'User Login',
+          'email'   => 'Full name',
+          'password'   => 'Password',
         );
       }
     }
