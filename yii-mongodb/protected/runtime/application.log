@@ -947,3 +947,23 @@ Stack trace:
 REQUEST_URI=/yii-mongodb/index.php/site/createuser
 in /var/www/html/yii-mongodb/protected/controllers/SiteController.php (138)
 in /var/www/html/yii-mongodb/index.php (13)
+2017/04/28 19:47:33 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "searchuser".' in /var/www/html/yii_framework/framework/web/CController.php:486
+Stack trace:
+#0 /var/www/html/yii_framework/framework/web/CController.php(270): CController->missingAction('searchuser')
+#1 /var/www/html/yii_framework/framework/web/CWebApplication.php(282): CController->run('searchuser')
+#2 /var/www/html/yii_framework/framework/web/CWebApplication.php(141): CWebApplication->runController('site/searchuser')
+#3 /var/www/html/yii_framework/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#4 /var/www/html/yii-mongodb/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii-mongodb/index.php/site/searchuser
+---
+2017/04/28 19:53:59 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "searchuser".' in /var/www/html/yii_framework/framework/web/CController.php:486
+Stack trace:
+#0 /var/www/html/yii_framework/framework/web/CController.php(270): CController->missingAction('searchuser')
+#1 /var/www/html/yii_framework/framework/web/CWebApplication.php(282): CController->run('searchuser')
+#2 /var/www/html/yii_framework/framework/web/CWebApplication.php(141): CWebApplication->runController('site/searchuser')
+#3 /var/www/html/yii_framework/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#4 /var/www/html/yii-mongodb/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii-mongodb/index.php/site/searchuser
+---

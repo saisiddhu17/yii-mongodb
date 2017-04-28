@@ -174,4 +174,22 @@ class SiteController extends Controller
 		$this->render('create-user',array('model'=>$model));
 
 	}
+
+
+	public function actionSearch() {
+
+		$model = new User;
+		if(isset($_POST['User']['email'])) {
+
+			$email = $_POST['User']['email'];
+
+			if( $model->findAllByAttributes(array('email' => $email)) ) {
+				$this->render('search-result', array('model'=> $model));
+			}
+
+		}
+
+		$this->render('search-user', array('model' => $model));
+
+	}
 }
