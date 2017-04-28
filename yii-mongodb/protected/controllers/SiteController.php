@@ -152,14 +152,16 @@ class SiteController extends Controller
 			$email = $model->email;
 			$password = $model->password;
 			*/
-			$model->save();
+			if($model->save()){
+				Yii::app()->user->setFlash('success','Created user successfully.');
+			}
 
 		}
 		
 
 
 		//mail(Yii::app()->params['adminEmail'],$subject,$model->body,$headers);
-		Yii::app()->user->setFlash('success','Created user successfully.');
+		//$this->refresh();
 		//$this->refresh();
 		
 		/*

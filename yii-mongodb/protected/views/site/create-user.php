@@ -11,10 +11,11 @@ $this->breadcrumbs=array(
 
 <h1>Create User</h1>
 
-<?php if(! Yii::app()->user->hasFlash('success')): ?>
+<?php if(Yii::app()->user->hasFlash('success')): ?>
 
 <div class="flash-success">
 	<?php echo Yii::app()->user->getFlash('success'); ?>
+	
 </div>
 
 <?php else: ?>
