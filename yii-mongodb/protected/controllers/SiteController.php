@@ -111,4 +111,65 @@ class SiteController extends Controller
 		$users = User::model()->findAll();
 		$this->render('user-list', array('model'=>$users));
 	}
+
+	public function actionCreateUser(){
+
+		/*
+		//$arr = array(
+		//	"username" => "Test1",
+		//	"password" => "Test1",
+		//	"email" => "test1@yiimongodb.com"
+		//	);
+
+
+
+		User::model()->username = "Test1";
+		User::model()->password = "Test1";
+		User::model()->email = "test1@yiimongodb.com";
+		User::model()->save();
+
+		$users = User::model()->findAll();
+		$this->render('user-list', array('model'=>$users));
+		*/
+
+
+		//$model=new ContactForm;
+
+		$model = new User;
+
+		if( isset( $_POST['User'] ) ) {
+
+			$model->attributes = $_POST['User'];
+			
+			//$username= $_POST['User']['username'];
+		
+			//$email=$_POST['User']['email'];
+
+			//$password=$_POST['User']['password'];
+
+			/*
+			$username= $model->username;
+			$email = $model->email;
+			$password = $model->password;
+			*/
+			$model->save();
+
+		}
+		
+
+
+		//mail(Yii::app()->params['adminEmail'],$subject,$model->body,$headers);
+		Yii::app()->user->setFlash('success','Created user successfully.');
+		//$this->refresh();
+		
+		/*
+		$model->username = $username;
+		$model->password = $password;
+		$model->email = $email;
+		$model->save();
+		*/
+
+		$this->render('create-user',array('model'=>$model));
+
+	}
 }

@@ -5,6 +5,7 @@ class User extends EMongoDocument
       public $username;
       public $email;
       public $password;
+      //public $userDocument;
  
       // This has to be defined in every model, this is same as with standard Yii ActiveRecord
       public static function model($className=__CLASS__)
@@ -24,6 +25,7 @@ class User extends EMongoDocument
           array('username, password', 'required'),
           array('username, password', 'length', 'max' => 20),
           array('email', 'length', 'max' => 255),
+          array('username,password,email', 'safe')
         );
       }
  
@@ -31,7 +33,7 @@ class User extends EMongoDocument
       {
         return array(
           'username'  => 'User Login',
-          'email'   => 'Full name',
+          'email'   => 'Email',
           'password'   => 'Password',
         );
       }

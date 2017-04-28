@@ -925,3 +925,25 @@ REQUEST_URI=/yii-mongodb/index.php/site/listusers
 in /var/www/html/yii-mongodb/protected/views/site/user-list.php (4)
 in /var/www/html/yii-mongodb/protected/controllers/SiteController.php (112)
 in /var/www/html/yii-mongodb/index.php (13)
+2017/04/28 12:19:11 [error] [php] Undefined variable: username (/var/www/html/yii-mongodb/protected/controllers/SiteController.php:122)
+Stack trace:
+#0 /var/www/html/yii_framework/framework/web/CController.php(286): SiteController->runAction()
+#1 /var/www/html/yii_framework/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#2 /var/www/html/yii_framework/framework/web/CWebApplication.php(282): SiteController->run()
+#3 /var/www/html/yii_framework/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /var/www/html/yii_framework/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#5 /var/www/html/yii-mongodb/index.php(13): CWebApplication->run()
+REQUEST_URI=/yii-mongodb/index.php/site/createuser
+in /var/www/html/yii-mongodb/protected/controllers/SiteController.php (122)
+in /var/www/html/yii-mongodb/index.php (13)
+2017/04/28 13:04:12 [error] [php] Undefined variable: model (/var/www/html/yii-mongodb/protected/controllers/SiteController.php:138)
+Stack trace:
+#0 /var/www/html/yii_framework/framework/web/CController.php(286): SiteController->runAction()
+#1 /var/www/html/yii_framework/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#2 /var/www/html/yii_framework/framework/web/CWebApplication.php(282): SiteController->run()
+#3 /var/www/html/yii_framework/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /var/www/html/yii_framework/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#5 /var/www/html/yii-mongodb/index.php(13): CWebApplication->run()
+REQUEST_URI=/yii-mongodb/index.php/site/createuser
+in /var/www/html/yii-mongodb/protected/controllers/SiteController.php (138)
+in /var/www/html/yii-mongodb/index.php (13)
