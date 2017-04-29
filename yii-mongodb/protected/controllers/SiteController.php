@@ -181,15 +181,38 @@ class SiteController extends Controller
 		$model = new User;
 		if(isset($_POST['User']['email'])) {
 
-			$email = $_POST['User']['email'];
+			$model->email = $_POST['User']['email'];
 
-			if( $model->findAllByAttributes(array('email' => $email)) ) {
-				$this->render('search-result', array('model'=> $model));
+			if( $model->findAllByAttributes(array('email' => $model->email)) ) {
+				
+				//$this->redirect(array('searchresult', 'model'=>$model));
+				//$this->render('search-result', array('model'=> $model));
+				
+				//$params = array('model'=>$model);
+
+				//$action = $this->createUrl('searchresult', $params);
+				//$this->forward($action);
+
+				$this->actionSearchResult($model);
+			}
+			else {
+				Yii::app()->user->setFlash('no-data','No data found in the database');
 			}
 
+
 		}
+		
 
 		$this->render('search-user', array('model' => $model));
+
+	}
+
+	public function actionSearchResult($model) {
+
+		//$model = new User;
+
+		$this->render('search-result', array('model' => $model));
+
 
 	}
 }
